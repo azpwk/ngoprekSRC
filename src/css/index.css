@@ -1,0 +1,118 @@
+:root {
+  --primary-bg: #fff;
+  --primary-text: #1f2937;
+  --secondary-bg: #f3f4f6;
+  --dark-bg: #111827;
+  --hitam: #111827;
+  --dark-text: #fff;
+  --cyan-color: #06b6d4;
+  --purple-color: #8b5cf6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg: #0b1220;
+    --primary-text: #d1d5db;
+    --secondary-bg: #111827;
+    --dark-bg: #000;
+    --dark-text: #fff;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+/* 404 */
+.gakada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* article */
+article {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+.left {
+  /* margin: 0 auto; */
+  /* min-height: 800px;
+  height: 100%; */
+}
+.left section {
+  width: 700px;
+  /* max-width: 800px; */
+}
+.right {
+  margin: 0 auto;
+  height: 100%;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: rgba(240, 248, 255, 0.068);
+  border-radius: 10px;
+}
+
+section {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: rgba(240, 248, 255, 0.068);
+  border-radius: 10px;
+}
+.source-box {
+  display: flex;
+  flex-direction: column;
+}
+.source-box img {
+  width: 40px;
+}
+section .judul {
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 15px;
+  color: rgb(9, 241, 183);
+}
+section .source {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+section span a {
+  border-bottom: 0.1px solid rgba(240, 248, 255, 0.438);
+  text-decoration: none;
+  color: rgb(9, 241, 183);
+}
+section p {
+  font-size: 14px;
+  color: aliceblue;
+}
+
+@media (max-width: 768px) {
+  article {
+    display: block;
+  }
+  .left section {
+    width: auto;
+  }
+}

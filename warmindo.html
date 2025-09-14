@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warmindo Juhud - Hangatnya Selalu Dirindukan</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --color-primary: #6f4e37; /* Kopi */
+        --color-secondary: #d4af37; /* Gold */
+        --color-accent: #8b5e3c; /* Rustic */
+        --color-background: #fff8f0; /* Cream */
+        --color-white: #fff;
+        --color-text: #2c2c2c;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--color-background);
+        color: var(--color-text);
+        scroll-behavior: smooth;
+      }
+
+      header {
+        background: linear-gradient(
+          90deg,
+          var(--color-primary),
+          var(--color-accent)
+        );
+        color: var(--color-white);
+        text-align: center;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      header p {
+        font-size: 1rem;
+        font-style: italic;
+      }
+
+      /* Hero with parallax */
+      .hero {
+        background: url("https://source.unsplash.com/1600x900/?noodles,indonesian-food")
+          no-repeat center/cover fixed;
+        height: 70vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-white);
+        text-align: center;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+      }
+
+      .hero .content {
+        position: relative;
+        z-index: 2;
+        padding: 1rem;
+      }
+
+      .hero h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: auto;
+      }
+
+      section {
+        padding: 5rem 2rem;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.4rem;
+        margin-bottom: 3rem;
+        color: var(--color-primary);
+        position: relative;
+        font-weight: 700;
+      }
+
+      .section-title::after {
+        content: "";
+        width: 80px;
+        height: 4px;
+        background: var(--color-secondary);
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 3px;
+      }
+
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .menu-item {
+        background: var(--color-white);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .menu-item:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      }
+
+      .menu-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .menu-content {
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .menu-content h3 {
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .menu-content p {
+        color: #555;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      /* WhatsApp button */
+      .order-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        background: var(--color-secondary);
+        color: var(--color-white);
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .order-btn:hover {
+        background: #b68e2f;
+        transform: translateY(-3px);
+      }
+
+      .wa-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      .about {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .about-text {
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .about-text h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--color-primary);
+      }
+
+      .about-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .about-image img {
+        max-width: 450px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      footer {
+        background: linear-gradient(
+          90deg,
+          var(--color-accent),
+          var(--color-primary)
+        );
+        color: var(--color-white);
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      footer p {
+        margin: 5px 0;
+      }
+
+      footer a {
+        color: var(--color-secondary);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      footer .social-media a {
+        margin: 0 10px;
+        font-size: 1.5rem;
+        color: var(--color-white);
+        transition: color 0.3s ease;
+      }
+
+      footer .social-media a:hover {
+        color: var(--color-secondary);
+      }
+
+      @media (max-width: 768px) {
+        .hero h2 {
+          font-size: 2.2rem;
+        }
+        .section-title {
+          font-size: 2rem;
+        }
+        .about {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Warmindo Juhud</h1>
+      <p>Hangatnya Selalu Dirindukan</p>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="content" data-aos="fade-up">
+        <h2>Selamat Datang di Warmindo Juhud</h2>
+        <p>
+          Tempat terbaik menikmati semangkuk kehangatan mie instan dengan rasa
+          otentik & penuh kenangan.
+        </p>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu">
+      <h2 class="section-title" data-aos="fade-down">Menu Andalan</h2>
+      <div class="menu-grid">
+        <div class="menu-item" data-aos="zoom-in">
+          <img
+            src="https://source.unsplash.com/400x300/?indomie,cheese"
+            alt="Indomie Spesial"
+          />
+          <div class="menu-content">
+            <h3>Indomie Juhud Spesial</h3>
+            <p>
+              Indomie goreng dengan telur setengah matang, keju parut, dan
+              sosis.
+            </p>
+            <a
+              class="order-btn"
+              href="https://wa.me/628123456789?text=Halo%20Warmindo%20Juhud,%20saya%20ingin%20pesan%20Indomie%20Juhud%20Spesial."
+              target="_blank"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                alt="WA"
+                class="wa-icon"
+              />
+              Pesan Sekarang
+            </a>
+          </div>
+        </div>
+
+        <div class="menu-item" data-aos="zoom-in" data-aos-delay="200">
+          <img
+            src="https://source.unsplash.com/400x300/?spicy,noodles"
+            alt="Indomie Ayam Geprek"
+          />
+          <div class="menu-content">
+            <h3>Indomie Ayam Geprek</h3>
+            <p>
+              Pedas mantap! Indomie goreng dengan ayam geprek renyah & sambal
+              khas Juhud.
+            </p>
+            <a
+              class="order-btn"
+              href="https://wa.me/628123456789?text=Halo%20Warmindo%20Juhud,%20saya%20ingin%20pesan%20Indomie%20Ayam%20Geprek."
+              target="_blank"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                alt="WA"
+                class="wa-icon"
+              />
+              Pesan Sekarang
+            </a>
+          </div>
+        </div>
+
+        <div class="menu-item" data-aos="zoom-in" data-aos-delay="400">
+          <img
+            src="https://source.unsplash.com/400x300/?soup,noodles"
+            alt="Mie Rebus"
+          />
+          <div class="menu-content">
+            <h3>Mie Rebus Telur Sosis</h3>
+            <p>
+              Mie rebus gurih hangat dengan potongan sosis & telur rebus pas di
+              lidah.
+            </p>
+            <a
+              class="order-btn"
+              href="https://wa.me/628123456789?text=Halo%20Warmindo%20Juhud,%20saya%20ingin%20pesan%20Mie%20Rebus%20Telur%20Sosis."
+              target="_blank"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                alt="WA"
+                class="wa-icon"
+              />
+              Pesan Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="tentang">
+      <h2 class="section-title" data-aos="fade-down">Tentang Kami</h2>
+      <div class="about">
+        <div class="about-text" data-aos="fade-right">
+          <h3>Lebih dari Sekadar Warmindo</h3>
+          <p>
+            Warmindo Juhud lahir dari kecintaan kami pada mie instan yang selalu
+            jadi comfort food setiap orang.
+          </p>
+          <p>
+            Kami percaya semangkuk mie hangat bukan cuma mengenyangkan, tapi
+            juga membawa bahagia & kenangan manis.
+          </p>
+        </div>
+        <div class="about-image" data-aos="fade-left">
+          <img
+            src="https://source.unsplash.com/500x350/?cafe,cozy"
+            alt="Suasana Warmindo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Warmindo Juhud. Hak Cipta Dilindungi.</p>
+      <p>Alamat: Jl. Hangat Selalu No.10, Kota Bahagia</p>
+      <p>Hubungi: <a href="tel:+628123456789">+62 812-3456-789</a></p>
+      <div class="social-media">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+  </body>
+</html>

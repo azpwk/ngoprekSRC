@@ -1,0 +1,23 @@
+echo "# ngoprek" >> README.md
+git config --global user.email "tespagehtml@gmail.com"
+git config --global user.name "azpwk"
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/azpwk/ngoprekSRC.git
+git push -u origin main
+//
+git init
+git add -A
+git commit -m "update by admin"
+git branch -M main
+git remote add origin https://github.com/azpwk/ngoprekSRC.git
+git push -u origin main
+
+https://cdn.jsdelivr.net/gh/azpwk/database@main/linux/new.json
+
+
+
+git add -A && git commit -m "first commit" && git pull origin main --allow-unrelated-histories && git push -u origin main
