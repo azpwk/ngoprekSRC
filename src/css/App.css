@@ -1,0 +1,53 @@
+main {
+  margin-top: 40px;
+}
+
+/*  */
+article {
+  margin-bottom: 20px;
+}
+article .list {
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: rgba(6, 233, 241, 0.296);
+  /* color: aliceblue; */
+  padding: 10px;
+  border-radius: 10px;
+}
+article .list .title {
+  font-size: 15px;
+  color: rgb(0, 183, 255);
+}
+article .list p {
+  font-size: 10px;
+}
+
+/*  */
+.menu {
+  display: flex;
+  gap: 10px;
+  /* background-color: rgba(6, 119, 240, 0.142); */
+}
+.menu .link {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.626);
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+.menu .link:hover {
+  color: black;
+  border-bottom: 1px solid rgb(2, 146, 248);
+}
+
+/* mikrotik-img */
+.a-img {
+  max-width: 500px;
+  filter: drop-shadow(0 0 10px rgba(0, 150, 255, 0.6));
+}
+
+/* ponsel */
+@media (max-width: 768px) {
+  .a-img {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,159 @@
+.header {
+  background: linear-gradient(135deg, #0ea5a4 0%, #7c3aed 100%);
+  color: var(--dark-text);
+  padding: 1rem;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Nav */
+.nav {
+  display: none; /* hidden on small screens */
+  gap: 1.25rem;
+  align-items: center;
+}
+.nav-link {
+  color: var(--dark-text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+}
+.nav-link:hover {
+  background: black;
+  color: aliceblue;
+}
+/*  */
+.nav-link.active {
+  /* color: rgb(9, 175, 241); */
+  font-weight: bold;
+  border-bottom: 1px solid aliceblue;
+  color: aliceblue;
+}
+
+.mobile-menu-button {
+  display: block;
+  border: none;
+  background: transparent;
+  color: var(--dark-text);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 6px;
+}
+
+/* Mobile open menu */
+.nav.open {
+  position: fixed;
+  z-index: 9999999999;
+  display: flex !important;
+  flex-direction: column;
+  right: 1rem;
+  /* top: calc(100% + 0.5rem); */
+  top: 90px;
+  background-color: aliceblue;
+  padding: 0.75rem;
+  border-radius: 8px;
+  min-width: 200px;
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+/*  */
+.logo.judul {
+  font-size: 2rem; /* bisa disesuaikan */
+  font-weight: bold;
+
+  background: linear-gradient(
+    270deg,
+    rgb(9, 226, 241),
+    aliceblue,
+    rgb(9, 226, 241),
+    rgb(9, 226, 241)
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 8s ease infinite;
+}
+
+/* container-header */
+.c-header {
+  margin-left: 80px;
+  margin-top: 10px;
+}
+.c-header .c-flex-head {
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.c-header .c-flex-head .left {
+  display: flex;
+  flex-direction: column;
+  flex-direction: 1;
+}
+.c-header .c-flex-head .left h2 {
+  font-family: "Fira Code", monospace;
+  font-size: 50px;
+  color: aliceblue;
+}
+.c-header .c-flex-head .right {
+  display: flex;
+  flex-direction: 2;
+}
+
+/* container-header */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+  .mobile-menu-button {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .svg-logo {
+    display: none;
+  }
+  .nav-link.active {
+    /* color: rgb(9, 175, 241); */
+    font-weight: bold;
+    border-bottom: 1px solid var(--primary-text);
+    color: black;
+  }
+  /*  */
+  .c-header {
+    margin: 0 auto;
+    font-size: 13px;
+  }
+  .c-header .c-flex-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .c-header .c-flex-head .left h2 {
+    font-size: 20px;
+    color: aliceblue;
+  }
+  /*  */
+}
